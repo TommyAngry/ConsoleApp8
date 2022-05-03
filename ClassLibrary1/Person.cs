@@ -6,7 +6,7 @@ namespace ClassLibrary1
     {
         public virtual string Name { get; set; }
         
-        public virtual int MyChip { get; set; } = 1;
+        public virtual int MyChip { get; set; };
         public virtual int EnemyChip { get; set; }
         protected virtual string Prefix { get; } = "F.";
 
@@ -19,5 +19,5 @@ namespace ClassLibrary1
 
     public class Bot : Person {
         public override string Name { get; set; } = "Bot";
-        public override int MyChip { get; set; } = 7; public override int EnemyChip { get; set; } = 7; }
+        public override int MyChip { get; set; } = 0; public override int EnemyChip { get; set; } = 0; }
 }

@@ -35,14 +35,14 @@ namespace ClassLibrary1
         /// <param name="RandB"></param>
         /// <returns></returns>
         /// 
-        RecordData recordData = new();
+       
         /// <summary>
         /// с помощью этого метода идет выборка в каком порядке вбивать параметры
         /// </summary>
         /// <param name="a"></param>
         public void Variant(int a)
         {
-
+             RecordData recordData = new();
             switch (a != 1)
             {
                 case true: Game(recordData.a,recordData.b, recordData.c, recordData.d);

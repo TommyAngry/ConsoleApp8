@@ -10,10 +10,7 @@ namespace ClassLibrary1
 {
    public  class FileManager
     {
-       public  int  PChipBlue { get; set; }
-        public int PChipRed { get; set; }
-        public int BChipBlue { get; set; }
-        public int BChipRed { get; set; }
+      
        
       
         public  void FileData(int a,int b, int c,int d)
