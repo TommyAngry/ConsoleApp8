@@ -1,5 +1,5 @@
 ﻿using System;
-namespace Lab2.BL
+namespace ClassLibrary1
 {
     public class RecordData
     {
@@ -9,19 +9,19 @@ namespace Lab2.BL
         public int b { get; set; }
         public int c { get; set; }
         public int d { get; set; }
-      
-       public void ChipsCountStart()
+
+        public void ChipsCountStart()
         {
             FileManager fMPeopleBlue = new();
 
 
-            a = Convert.ToInt32(fMPeopleBlue.Chary("B","P")); //Blue People
+            a = Convert.ToInt32(fMPeopleBlue.Chary('B', 'P')); //Blue People
             FileManager fMBotBlue = new();
-            b = Convert.ToInt32(fMBotBlue.Chary("b", "M"));//blue machine
+            b = Convert.ToInt32(fMBotBlue.Chary('b', 'M'));//blue machine
             FileManager fMPeopleRed = new();
-            c = Convert.ToInt32(fMPeopleRed.Chary("p", "R"));//people Red
+            c = Convert.ToInt32(fMPeopleRed.Chary('p', 'R'));//people Red
             FileManager fMBotRed = new();
-            d = Convert.ToInt32(fMBotRed.Chary("m", "r"));//machine red
+            d = Convert.ToInt32(fMBotRed.Chary('m', 'r'));//machine red
         }
     }
      

@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClassLibrary1", "ClassLibra
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClassLibrary1Tests", "ClassLibrary1Tests\ClassLibrary1Tests.csproj", "{76D9A560-0626-4C99-A510-609F10366728}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "testtw", "testtw\testtw.csproj", "{3115F116-ACE9-4F1A-9E45-8199846B6604}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "testtw", "testtw\testtw.csproj", "{3115F116-ACE9-4F1A-9E45-8199846B6604}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prezenter", "Prezenter\Prezenter.csproj", "{28E2F0BE-C0EF-40AF-9D07-1000E444B891}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{3115F116-ACE9-4F1A-9E45-8199846B6604}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3115F116-ACE9-4F1A-9E45-8199846B6604}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3115F116-ACE9-4F1A-9E45-8199846B6604}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28E2F0BE-C0EF-40AF-9D07-1000E444B891}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28E2F0BE-C0EF-40AF-9D07-1000E444B891}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28E2F0BE-C0EF-40AF-9D07-1000E444B891}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28E2F0BE-C0EF-40AF-9D07-1000E444B891}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

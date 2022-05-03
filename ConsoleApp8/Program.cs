@@ -1,6 +1,7 @@
 ﻿using System;
 using ClassLibrary1;
 
+
 namespace ConsoleApp8
 {
     class Program
@@ -8,11 +9,15 @@ namespace ConsoleApp8
        
         static void Main(string[] args)
         {
-
+            FileManager file = new();
+            file.FileData(7, 0, 7, 0);
+            RecordData record = new();
+            record.ChipsCountStart();
             People people = new();
             Bot bot = new();
             Logic logic = new();
-            logic.Game(7, 7, 0, 0, logic.Rand(1, 6), logic.Rand(1, 6));
+            logic.Variant(0);
+            logic.Variant(1);
             logic.Notify += DisplayMessage;
             Console.WriteLine();
             logic.EventsGame(0, 0,  bot, people);
