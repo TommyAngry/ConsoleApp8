@@ -106,17 +106,7 @@ namespace ClassLibrary1
         /// <param name="myChip"></param>
         /// <param name="enemyChip"></param>
         /// <param name="a"></param>
-        private void VyborKakZapisat(int myColor, int enemyColor, int myChip, int enemyChip, int a)
-        {
-            if (a == 1)
-            {
-                fileManager.FileData(myColor, myChip, enemyColor, enemyChip);
-            }
-            if (a == 0)
-            {
-                fileManager.FileData(enemyColor, enemyChip, myColor, myChip);
-            }
-        }
+       
         /// <summary>
         /// работак с кубикамиЮ какие фишки брать, своего или чужого цвета
         /// </summary>
