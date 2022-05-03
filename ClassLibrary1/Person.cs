@@ -6,7 +6,7 @@ namespace ClassLibrary1
     {
         public virtual string Name { get; set; }
         
-        public virtual int MyChip { get; set; };
+        public virtual int MyChip { get; set; }
         public virtual int EnemyChip { get; set; }
         protected virtual string Prefix { get; } = "F.";
 
