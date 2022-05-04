@@ -74,7 +74,8 @@ namespace ClassLibrary1
                             myChip += res;
                         }
                     }
-                    fileManager.FileData(myColor, myChip, enemyColor, enemyChip);
+                    CountEnemy countEnemy = new(myColor, myChip, enemyColor, enemyChip);
+                    fileManager.FileData(myColor, myChip, enemyColor, enemyChip,countEnemy.EnemyMy,countEnemy.EnemyChips);
 
                     return myChip;
 
