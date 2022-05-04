@@ -10,7 +10,7 @@ namespace ConsoleApp8
         static void Main(string[] args)
         {
             FileManager file = new();
-            file.FileData(7, 0, 7, 0);
+            file.FileData(7, 0, 0, 7,0,0);
             RecordData record = new();
             record.ChipsCountStart();
             People people = new();

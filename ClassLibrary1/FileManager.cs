@@ -13,14 +13,14 @@ namespace ClassLibrary1
       
        
       
-        public  void FileData(int a,int b, int c,int d)
+        public  void FileData(int a,int b, int c,int d,int e,int f)
         {
 
            
             using (StreamWriter sr = new StreamWriter(@"C:\\Users\\Username\\Desktop\\writer.txt",
                 false, Encoding.Default))
             {
-                sr.WriteLine($"B{a}P\nb{b}M\np{c}R\nm{d}r");
+                sr.WriteLine($"B{a}C\nP{b}B\np{c}R\nM{d}r\nm{e}r\nb{f}e");
             }
             
            

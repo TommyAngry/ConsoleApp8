@@ -43,6 +43,7 @@ namespace ClassLibrary1
         public void Variant(int a)
         {
              RecordData recordData = new();
+            recordData.ChipsCountStart();
             switch (a != 1)
             {
                 case true: Game(recordData.a,recordData.b, recordData.c, recordData.d);
