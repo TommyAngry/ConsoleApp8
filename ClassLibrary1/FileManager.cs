@@ -20,7 +20,7 @@ namespace ClassLibrary1
             using (StreamWriter sr = new StreamWriter(@"C:\\Users\\Username\\Desktop\\writer.txt",
                 false, Encoding.Default))
             {
-                sr.WriteLine($"B{a}C\nP{b}B\np{c}R\nM{d}r\nm{e}r\nb{f}e");
+                sr.WriteLine($"B{a}C\nP{b}B\np{c}R\nM{d}y\nm{e}r\nb{f}e");
             }
             
            

@@ -14,6 +14,29 @@ namespace ClassLibrary1
         /// <param name="a"></param>
         /// <param name="b"></param>
         /// <returns></returns>
+        /// 
+
+  
+          
+            public void Variant(int a)
+            {
+               
+                RecordData recordData = new();
+                recordData.ChipsCountStart();
+                switch (a != 1)
+                {
+                    case true:
+                        Game(recordData.a, recordData.b, recordData.c, recordData.d, a);
+                    break;
+                    
+
+                    case false:
+                        Game(recordData.c, recordData.d, recordData.a, recordData.b,a);
+                    break;
+                    
+                }
+            }
+        
         public int Rand(int a, int b)
         {
             Random random = new Random();
@@ -39,65 +62,82 @@ namespace ClassLibrary1
         /// <summary>
         /// с помощью этого метода идет выборка в каком порядке вбивать параметры
         /// </summary>
-        /// <param name="a"></param>
-        public void Variant(int a)
-        {
-             RecordData recordData = new();
-            recordData.ChipsCountStart();
-            switch (a != 1)
-            {
-                case true: Game(recordData.a,recordData.b, recordData.c, recordData.d);
-                    break;
-                
-                case false: Game(recordData.c, recordData.d, recordData.a, recordData.b);
-                    break;
-            }
-        }
+        /// <param name="a">отвечает за правильную запись в докумени, если 0-bot,если 1-человек</param>
+      
         FileManager fileManager = new();
-        public int Game(int myColor, int enemyColor, int myChip, int enemyChip)
+      
+        public void Game(int PeopleColor, int PHaveChip, int BotColor,int BHaveChip,int a)
         {
             int RandA = Rand(1, 6); int RandB = Rand(1, 6);
             switch (RandA != RandB)
             {
                 case true:
-                    if (myColor != 0)
+                    if (PeopleColor != 0)
                     {
                         int res = Chips(RandA, RandB);
-                        if (myColor < res)
+                        if (PeopleColor < res)
                         {
-                            myChip += myColor;
-                            myColor -= myColor;
+                            PHaveChip += PeopleColor;
+                            PeopleColor -= PeopleColor;
+                            Rec(a, PeopleColor, PHaveChip, BotColor, BHaveChip);
+                            break;
+                            
                         }
-                        if (myColor > res)
+                        else if (PeopleColor > res)
                         {
-                            myColor -= res;
-                            myChip += res;
+                            PeopleColor -= res;
+                            PHaveChip += res;
+                            Rec(a, PeopleColor, PHaveChip, BotColor, BHaveChip);
+                            break;
                         }
                     }
-                    CountEnemy countEnemy = new(myColor, myChip, enemyColor, enemyChip);
-                    fileManager.FileData(myColor, myChip, enemyColor, enemyChip,countEnemy.EnemyMy,countEnemy.EnemyChips);
-
-                    return myChip;
+                    break;
+                  
 
                 case false:
-                    if (enemyColor != 0)
+                    if (BotColor != 0)
                     {
-                        if (enemyColor > RandA)
+                        if (BotColor > RandA)
                         {
-                            enemyColor -= RandA;
-                            enemyChip += RandA;
-
+                            BotColor -= RandA;
+                            BHaveChip += RandA;
+                            Rec(a, PeopleColor, PHaveChip, BotColor, BHaveChip);
+                            break;
                         }
-                        if (enemyColor < RandA)
+                       else if (BotColor < RandA)
                         {
-                            enemyChip += enemyColor;
-                            enemyColor -= enemyColor;
+                            BHaveChip += BotColor;
+                            BotColor -= BotColor;
+                            Rec(a, PeopleColor, PHaveChip, BotColor, BHaveChip);
+                            break;
                         }
                     }
-                     fileManager.FileData(myColor, myChip, enemyColor, enemyChip);
-                  
-                    return enemyChip;
+
+                    break;
             }
+
+        }
+        /// <summary>
+        /// передаются данные из логики(game)для выбора как записать
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="PeopleColor"></param>
+        /// <param name="PHaveChip"></param>
+        /// <param name="BotColor"></param>
+        /// <param name="BHaveChip"></param>
+        void Rec(int a, int PeopleColor, int PHaveChip, int BotColor, int BHaveChip)
+        {
+            if (a == 0)
+            {
+                CountEnemy countEnemy = new(PeopleColor, PHaveChip, BotColor, BHaveChip);
+                fileManager.FileData(BotColor, BHaveChip, countEnemy.EnemyMy, PeopleColor, PHaveChip, countEnemy.EnemyMy);
+            }
+            if (a == 1)
+            {
+                CountEnemy countEnemy = new(PeopleColor, PHaveChip, BotColor, BHaveChip);
+                fileManager.FileData(PeopleColor, PHaveChip, countEnemy.EnemyMy, BotColor, BHaveChip, countEnemy.EnemyMy);
+            }
+
 
         }
         /// <summary>
@@ -108,7 +148,7 @@ namespace ClassLibrary1
         /// <param name="myChip"></param>
         /// <param name="enemyChip"></param>
         /// <param name="a"></param>
-       
+
         /// <summary>
         /// работак с кубикамиЮ какие фишки брать, своего или чужого цвета
         /// </summary>

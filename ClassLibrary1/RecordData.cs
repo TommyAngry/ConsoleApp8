@@ -26,7 +26,7 @@ namespace ClassLibrary1
             FileManager fMPeopleRed = new();
             c = Convert.ToInt32(fMPeopleRed.Chary('p', 'R'));//people Red
             FileManager fMBotRed = new();
-            d = Convert.ToInt32(fMBotRed.Chary('M', 'r'));//machine red
+            d = Convert.ToInt32(fMBotRed.Chary('M', 'y'));//machine red
             FileManager fMBotRedColour = new();
             e = Convert.ToInt32(fMBotRed.Chary('m', 'r'));//machine red
             FileManager bot_enemy = new();
