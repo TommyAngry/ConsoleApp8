@@ -18,8 +18,16 @@ namespace ClassLibrary1
         public int EnemyChips { get; set; }
        public CountEnemy(int myColour,int myChip,int enemyColour,int MyenemyChip)
        {
-            EnemyMy = myColour - myChip;
-            EnemyChips = enemyColour - MyenemyChip;
+            if(myColour+myChip!=7)
+            {
+                EnemyMy = 7-(myColour + myChip);
+            }
+            else { EnemyMy = 0; }
+            if(enemyColour+MyenemyChip!=7)
+            {
+                EnemyChips = 7 - (enemyColour + MyenemyChip);
+            }
+            else { EnemyChips = 0; }
        }
     }
 }

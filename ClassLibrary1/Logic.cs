@@ -16,8 +16,6 @@ namespace ClassLibrary1
         /// <returns></returns>
         /// 
 
-  
-          
             public void Variant(int a)
             {
                
@@ -35,37 +33,24 @@ namespace ClassLibrary1
                     break;
                     
                 }
-            }
-        
+            }    
         public int Rand(int a, int b)
         {
             Random random = new Random();
 
             int Cube = random.Next(a, b);
-            Console.WriteLine(a & b);
+            
             return Cube;
         }
         public delegate string AccountHandler(int a);
         public event AccountHandler Notify;
-        /// <summary>
-        /// отвечает за изменения у игрока количества фишек
-        /// </summary>
-        /// <param name="myColor"></param>
-        /// <param name="enemyColor"></param>
-        /// <param name="myChip"></param>
-        /// <param name="enemyChip"></param>
-        /// <param name="RandA"></param>
-        /// <param name="RandB"></param>
-        /// <returns></returns>
-        /// 
-       
+        FileManager fileManager = new();
+
         /// <summary>
         /// с помощью этого метода идет выборка в каком порядке вбивать параметры
         /// </summary>
         /// <param name="a">отвечает за правильную запись в докумени, если 0-bot,если 1-человек</param>
-      
-        FileManager fileManager = new();
-      
+
         public void Game(int PeopleColor, int PHaveChip, int BotColor,int BHaveChip,int a)
         {
             int RandA = Rand(1, 6); int RandB = Rand(1, 6);
@@ -125,30 +110,39 @@ namespace ClassLibrary1
         /// <param name="PHaveChip"></param>
         /// <param name="BotColor"></param>
         /// <param name="BHaveChip"></param>
+        ///   
+        People people = new People();
+        Bot bot = new();
+
         void Rec(int a, int PeopleColor, int PHaveChip, int BotColor, int BHaveChip)
         {
             if (a == 0)
             {
+                //бот
+              
                 CountEnemy countEnemy = new(PeopleColor, PHaveChip, BotColor, BHaveChip);
-                fileManager.FileData(BotColor, BHaveChip, countEnemy.EnemyMy, PeopleColor, PHaveChip, countEnemy.EnemyMy);
+                fileManager.FileData(BotColor, BHaveChip, countEnemy.EnemyChips, PeopleColor, PHaveChip, countEnemy.EnemyMy);
+                people.MyChip = BHaveChip;
+                people.EnemyChip = countEnemy.EnemyChips;
+                bot.MyChip = PHaveChip;
+                bot.EnemyChip = countEnemy.EnemyMy;
+              
+
             }
             if (a == 1)
             {
+                ///человек
                 CountEnemy countEnemy = new(PeopleColor, PHaveChip, BotColor, BHaveChip);
-                fileManager.FileData(PeopleColor, PHaveChip, countEnemy.EnemyMy, BotColor, BHaveChip, countEnemy.EnemyMy);
+                fileManager.FileData(PeopleColor, PHaveChip, countEnemy.EnemyMy, BotColor, BHaveChip, countEnemy.EnemyChips);
+                people.MyChip = PHaveChip;
+                people.EnemyChip = countEnemy.EnemyMy;
+                bot.MyChip = BHaveChip;
+                bot.EnemyChip = countEnemy.EnemyChips;
+
             }
 
 
         }
-        /// <summary>
-        /// с помощью этого метода идет запись результатов
-        /// </summary>
-        /// <param name="myColor"></param>
-        /// <param name="enemyColor"></param>
-        /// <param name="myChip"></param>
-        /// <param name="enemyChip"></param>
-        /// <param name="a"></param>
-
         /// <summary>
         /// работак с кубикамиЮ какие фишки брать, своего или чужого цвета
         /// </summary>
